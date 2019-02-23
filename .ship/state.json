@@ -1,0 +1,27 @@
+{
+  "v1": {
+    "config": null,
+    "helmValues": "## Bitnami MongoDB image version\n## ref: https://hub.docker.com/r/bitnami/mongodb/tags/\n##\nimage: bitnami/mongodb:3.4.3-r0\n\n## Specify a imagePullPolicy\n## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'\n## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images\n##\n# imagePullPolicy:\n\n## MongoDB admin password\n## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#setting-the-root-password-on-first-run\n##\n# mongodbRootPassword:\n\n## MongoDB custom user and database\n## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#creating-a-user-and-database-on-first-run\n##\n# mongodbUsername:\n# mongodbPassword:\n# mongodbDatabase:\n\n## Enable persistence using Persistent Volume Claims\n## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/\n##\npersistence:\n  enabled: true\n  ## If defined, volume.beta.kubernetes.io/storage-class: \u003cstorageClass\u003e\n  ## Default: volume.alpha.kubernetes.io/storage-class: default\n  ##\n  # storageClass:\n  accessMode: ReadWriteOnce\n  size: 8Gi\n\n## Configure resource requests and limits\n## ref: http://kubernetes.io/docs/user-guide/compute-resources/\n##\nresources:\n  requests:\n    memory: 256Mi\n    cpu: 100m\n",
+    "releaseName": "mongodb",
+    "helmValuesDefaults": "## Bitnami MongoDB image version\n## ref: https://hub.docker.com/r/bitnami/mongodb/tags/\n##\nimage: bitnami/mongodb:3.4.3-r0\n\n## Specify a imagePullPolicy\n## 'Always' if imageTag is 'latest', else set to 'IfNotPresent'\n## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images\n##\n# imagePullPolicy:\n\n## MongoDB admin password\n## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#setting-the-root-password-on-first-run\n##\n# mongodbRootPassword:\n\n## MongoDB custom user and database\n## ref: https://github.com/bitnami/bitnami-docker-mongodb/blob/master/README.md#creating-a-user-and-database-on-first-run\n##\n# mongodbUsername:\n# mongodbPassword:\n# mongodbDatabase:\n\n## Enable persistence using Persistent Volume Claims\n## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/\n##\npersistence:\n  enabled: true\n  ## If defined, volume.beta.kubernetes.io/storage-class: \u003cstorageClass\u003e\n  ## Default: volume.alpha.kubernetes.io/storage-class: default\n  ##\n  # storageClass:\n  accessMode: ReadWriteOnce\n  size: 8Gi\n\n## Configure resource requests and limits\n## ref: http://kubernetes.io/docs/user-guide/compute-resources/\n##\nresources:\n  requests:\n    memory: 256Mi\n    cpu: 100m\n",
+    "upstream": "https://github.com/helm/charts/tree/e3317dd3963e00020811194b591b3e1189f4d372/stable/mongodb",
+    "metadata": {
+      "applicationType": "helm",
+      "icon": "https://bitnami.com/assets/stacks/mongodb/img/mongodb-stack-220x234.png",
+      "name": "mongodb",
+      "releaseNotes": "[stable/mongodb] Release 0.4.9 (#837)\n\n* mongodb: update to `bitnami/mongodb:3.4.2-r2`\r\n\r\n* mongodb: bump chart version to `0.4.9`\r\n\r\n* mongodb: update to `bitnami/mongodb:3.4.3-r0`",
+      "version": "0.4.9"
+    },
+    "contentSHA": "f2433242677cbf503d71a56da5e92df455af1ccd2878f954fbff6e788877deed",
+    "lifecycle": {
+      "stepsCompleted": {
+        "intro": true,
+        "kustomize": true,
+        "kustomize-intro": true,
+        "outro": true,
+        "render": true,
+        "values": true
+      }
+    }
+  }
+}
