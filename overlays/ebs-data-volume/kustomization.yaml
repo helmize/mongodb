@@ -1,0 +1,22 @@
+bases:
+- ../../base
+
+patchesStrategicMerge:
+- ebs-data-volume.yaml
+
+configMapGenerator:
+- name: mongodb
+  literals:
+  - MONGODB_DATA_VOLUME_EBS="vol-<must-already-exist>"  # This AWS EBS volume must already exist.
+
+vars:
+- name: MONGODB_DATA_VOLUME_EBS
+  objref:
+    kind: ConfigMap
+    name: mongodb
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.MONGODB_DATA_VOLUME_EBS
+
+configurations:
+- kustomizeconfig.yaml

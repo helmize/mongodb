@@ -1,0 +1,3 @@
+varReference:
+- Kind: Deployment
+  Path: spec/template/spec/volumes/awsElasticBlockStore/volumeID

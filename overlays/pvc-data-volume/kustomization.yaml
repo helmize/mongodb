@@ -1,0 +1,8 @@
+bases:
+- ../../base
+
+resources:
+- pvc-standalone.yaml
+
+patchesStrategicMerge:
+- pvc-data-volume.yaml
