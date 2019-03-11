@@ -14,7 +14,6 @@ spec:
     metadata:
       labels:
         app: mongodb
-        chart: mongodb-5.5.0
         release: mongodb
     spec:
       containers:
@@ -30,7 +29,7 @@ spec:
           value: "no"
         - name: MONGODB_ENABLE_IPV6
           value: "yes"
-        image: docker.io/bitnami/mongodb:4.0.6
+        image: mongo:3.4.3
         imagePullPolicy: Always
         livenessProbe:
           exec:
@@ -59,11 +58,3 @@ spec:
           successThreshold: 1
           timeoutSeconds: 5
         resources: {}
-        securityContext:
-          runAsNonRoot: true
-          runAsUser: 1001
-        volumeMounts:
-        - mountPath: /bitnami/mongodb
-          name: data
-      securityContext:
-        fsGroup: 1001
