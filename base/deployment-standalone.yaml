@@ -67,7 +67,3 @@ spec:
           name: data
       securityContext:
         fsGroup: 1001
-      volumes:
-      - name: data
-        persistentVolumeClaim:
-          claimName: mongodb
