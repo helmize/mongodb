@@ -1,3 +1,5 @@
 varReference:
-- Kind: Deployment
-  Path: spec/template/spec/volumes/awsElasticBlockStore/volumeID
+- kind: Deployment
+  path: spec/template/spec/volumes/awsElasticBlockStore/volumeID
+- kind: Deployment
+  path: spec/template/spec/nodeSelector/failure-domain.beta.kubernetes.io\/zone

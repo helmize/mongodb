@@ -15,3 +15,5 @@ spec:
         awsElasticBlockStore:
           volumeID: $(MONGODB_DATA_VOLUME_EBS)
           fsType: ext4
+      nodeSelector:
+        failure-domain.beta.kubernetes.io/zone: $(MONGODB_NODE_ZONE)

@@ -7,7 +7,10 @@ patchesStrategicMerge:
 configMapGenerator:
 - name: mongodb
   literals:
-  - MONGODB_DATA_VOLUME_EBS="vol-<must-already-exist>"  # This AWS EBS volume must already exist.
+  # This AWS EBS volume must already exist, e.g. vol-0a67a5afead0ae81c
+  - MONGODB_DATA_VOLUME_EBS=
+  # Availability zone of the AWS EBS volume, e.g. us-west-1b
+  - MONGODB_NODE_ZONE=
 
 vars:
 - name: MONGODB_DATA_VOLUME_EBS
@@ -17,6 +20,13 @@ vars:
     apiVersion: v1
   fieldref:
     fieldpath: data.MONGODB_DATA_VOLUME_EBS
+- name: MONGODB_NODE_ZONE
+  objref:
+    kind: ConfigMap
+    name: mongodb
+    apiVersion: v1
+  fieldref:
+    fieldpath: data.MONGODB_NODE_ZONE
 
 configurations:
 - kustomizeconfig.yaml
