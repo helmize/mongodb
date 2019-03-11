@@ -8,7 +8,7 @@ spec:
       containers:
       - name: mongodb
         volumeMounts:
-        - mountPath: /bitnami/mongodb
+        - mountPath: /data/db
           name: data
       volumes:
       - name: data
